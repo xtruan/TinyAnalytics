@@ -45,7 +45,6 @@ foreach($logfiles as $logfile) {
       }
 
       // We only get this far for unique, non-bot data, so let's start recording it
-      $visitors[$rowdate]++;
 
       // If we have referer data, add it to the array (if it doesn't yet exist)
       if (!empty($referer) && !in_array($referer, $referers)) {
@@ -65,6 +64,11 @@ foreach($logfiles as $logfile) {
 
     // Replace logfile with tmpfile
     rename($tmpfile, $logfile);
+
+    // Count Visitors by unique IPs
+    foreach($ipTracker as $key => $ips) {
+      $visitors[$rowdate] = count($ips);
+    }
 
     // Write the Visitors file
     file_put_contents($visitorsfile, json_encode($visitors));
