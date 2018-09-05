@@ -56,7 +56,6 @@ foreach($logfiles as $logfile) {
       if ($rowdate == $today) {
         fwrite($write, join("\t",$data).PHP_EOL);
       }
-      echo 1;
     }
     fclose($log);
     fclose($write);
