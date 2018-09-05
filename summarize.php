@@ -14,6 +14,9 @@ foreach($logfiles as $logfile) {
   // Read the Referrers file
   $referers = json_decode(file_get_contents($referersfile), true);
 
+  // Create empty list of tracked IPs
+  $ipTracker = [];
+
   $today = date("Y-m-d");
 
   // Check we can open the logfile and tmpfile, then process it
@@ -64,15 +67,10 @@ foreach($logfiles as $logfile) {
     rename($tmpfile, $logfile);
 
     // Write the Visitors file
-    file_put_contents($writefile, json_encode($visitors));
+    file_put_contents($visitorsfile, json_encode($visitors));
 
     // Write the Referrers file
     file_put_contents($referersfile, json_encode($referers));
-
-    // Clear our variables for the next site
-    unset($visitors);
-    unset($referers);
-    unset($ipTracker);
   }
 }
 
