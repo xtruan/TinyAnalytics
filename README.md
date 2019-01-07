@@ -22,12 +22,14 @@ There are three easy steps:
 
 2) Add the following tracking code to your websites at then end of `.php` files, e.g. `/var/www/mywebsite/index.php`:
 
+    ~~~
     <?php 
     include '/var/www/TinyAnalytics/tracker.php';
     record_visit('mywebsite');
     ?>
+    ~~~~
 
-3) Modify your password in line 5 of `index.php`. Default password is `abcdef`.    
+3) Modify your password in the first lines of `index.php`. Default password is `abcdef`.    
 
 It's done! Visit at least one of your tracked websites, and open `TinyAnalytics/index.php` in your browser!
 
@@ -38,6 +40,10 @@ Author: Joseph Ernest ([@JosephErnest](https://twitter.com/JosephErnest))
 Other projects: [BigPicture](http://bigpicture.bi), [bigpicture.js](https://github.com/josephernest/bigpicture.js), [AReallyBigPage](https://github.com/josephernest/AReallyBigPage), [SamplerBox](http://www.samplerbox.org), [Void](http://www.thisisvoid.org), [TalkTalkTalk](https://github.com/josephernest/TalkTalkTalk), [YellowNoiseAudio](http://www.yellownoiseaudio.com), [bloggggg](https://github.com/josephernest/bloggggg), etc.
 
 Thanks to [WhiteHat](http://stackoverflow.com/users/5090771/whitehat) for his help on the chart visualization design.
+
+## Other versions
+
+Here is [PHP-only version](https://github.com/benyafai/TinyAnalytics) contributed by @benyafai.
 
 ## License
 
