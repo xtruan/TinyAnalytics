@@ -9,10 +9,18 @@ foreach($logfiles as $logfile) {
   $tmpfile = $logfile.'.tmp';
 
   // Read the Visitors file
-  $visitors = json_decode(file_get_contents($visitorsfile), true);
+  if (file_exists($visitorsfile)) {
+    $visitors = json_decode(file_get_contents($visitorsfile), true);
+  } else {
+    $visitors = array();
+  }
 
   // Read the Referrers file
-  $referers = json_decode(file_get_contents($referersfile), true);
+  if (file_exists($referers)) {
+    $referers = json_decode(file_get_contents($referersfile), true);
+  } else {
+    $referers = array();
+  }
 
   // Create empty list of tracked IPs
   $ipTracker = array();
