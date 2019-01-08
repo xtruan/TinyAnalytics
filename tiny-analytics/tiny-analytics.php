@@ -1,7 +1,7 @@
 <?php
 namespace Grav\Plugin;
 use \Grav\Common\Plugin;
-class ExamplePlugin extends Plugin
+class TinyAnalyticsPlugin extends Plugin
 {
     public static function getSubscribedEvents()
     {

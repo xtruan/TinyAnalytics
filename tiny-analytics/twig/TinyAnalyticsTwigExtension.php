@@ -1,10 +1,10 @@
 <?php
 namespace Grav\Plugin;
-class ExampleTwigExtension extends \Twig_Extension
+class TinyAnalyticsTwigExtension extends \Twig_Extension
 {
     public function getName()
     {
-        return 'ExampleTwigExtension';
+        return 'TinyAnalyticsTwigExtension';
     }
     public function getFunctions()
     {
