@@ -1,6 +1,6 @@
 <?php
 // Get a list of sites
-$logfiles = glob('logs/*.log', GLOB_BRACE);
+$logfiles = glob(__DIR__ . '/logs/*.log', GLOB_BRACE);
 // Iterate through each site's logs
 foreach($logfiles as $logfile) {
   // Name our working files based on the main site log name
