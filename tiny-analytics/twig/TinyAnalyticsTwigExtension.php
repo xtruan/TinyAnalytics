@@ -12,7 +12,7 @@ class TinyAnalyticsTwigExtension extends \Twig_Extension
             new \Twig_SimpleFunction('ta_record_visit', [$this, 'recordVisitFunction'])
         ];
     }
-    public function recordVisitFunction($page)
+    public function recordVisitFunction($page = 'default')
     {
         return 'page: ' + $page;
     }
