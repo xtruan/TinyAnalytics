@@ -16,7 +16,7 @@ foreach($logfiles as $logfile) {
   }
 
   // Read the Referrers file
-  if (file_exists($referers)) {
+  if (file_exists($referersfile)) {
     $referers = json_decode(file_get_contents($referersfile), true);
   } else {
     $referers = array();
