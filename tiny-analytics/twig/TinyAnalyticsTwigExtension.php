@@ -14,6 +14,6 @@ class TinyAnalyticsTwigExtension extends \Twig_Extension
     }
     public function recordVisitFunction($page = 'default')
     {
-        return 'page: ' + $page;
+        return 'page: ' . $page;
     }
 }
