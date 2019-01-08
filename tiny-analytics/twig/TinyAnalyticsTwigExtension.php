@@ -16,6 +16,7 @@ class TinyAnalyticsTwigExtension extends \Twig_Extension
     {
         require_once('/var/www/html/TinyAnalytics/tracker.php');
         record_visit($page);
-        return 'page: ' . $page;
+        //return 'page: ' . $page;
+        return '';
     }
 }

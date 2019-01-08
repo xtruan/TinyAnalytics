@@ -15,7 +15,7 @@ foreach($logfiles as $logfile) {
   $referers = json_decode(file_get_contents($referersfile), true);
 
   // Create empty list of tracked IPs
-  $ipTracker = [];
+  $ipTracker = array();
 
   $today = date("Y-m-d");
 
@@ -40,7 +40,7 @@ foreach($logfiles as $logfile) {
       }
 
       // We only count each IP once a day (Unique daily visitors)
-      if (in_array($ipadr, $ipTracker[$rowdate]) ) {
+      if (isset($ipTracker[$rowdate]) && in_array($ipadr, $ipTracker[$rowdate]) ) {
         continue;
       }
 
