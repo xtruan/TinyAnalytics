@@ -1,4 +1,4 @@
-# TinyAnalytics
+# TinyAnalytics + Grav Plugin
 
 <img src="http://gget.it/27cgzhtl/TinyAnalytics.png" width="900"/>
 
@@ -14,22 +14,32 @@ If you're looking for more informations than those (such as country, browser, sc
 
 > After years, I've noticed that **I prefer to have few (important) informations that I can consult each day in 30 seconds**, rather than lots of informations for which I would need 15 or 30 minutes per day for an in-depth analysis.
 
-## Install
+## Install TinyAnalytics
 
 There are three easy steps:
 
-1) Unzip this package in a directory, e.g. `/var/www/TinyAnalytics/`.
+1) Unzip this package in a directory, e.g. `/var/www/html/TinyAnalytics/`.
 
-2) Add the following tracking code to your websites at then end of `.php` files, e.g. `/var/www/mywebsite/index.php`:
+2) Add the following tracking code to your websites at then end of `.php` files, e.g. `/var/www/html/mywebsite/index.php`:
 
     ~~~
     <?php 
-    include '/var/www/TinyAnalytics/tracker.php';
+    include '/var/www/html/TinyAnalytics/tracker.php';
     record_visit('mywebsite');
     ?>
     ~~~~
 
 3) Modify your password in the first lines of `index.php`. Default password is `abcdef`.    
+
+It's done! Visit at least one of your tracked websites, and open `TinyAnalytics/index.php` in your browser!
+
+## Install Grav Plugin (after installing TinyAnalytics)
+
+1) Create a symlink from the Grav plugins directory to the tiny-analytics plugin: `ln -s /var/www/html/TinyAnalytics  /var/www/html/user/plugin/tiny-analytics`.
+
+2) Enable processing of twigs in pages and disable caching of twigs in Grav's system.yaml (or via the configuration page in the Admin plugin).
+
+3) On each page you want to track, add the following: `{{ ta_record_visit('mypage') }}`.
 
 It's done! Visit at least one of your tracked websites, and open `TinyAnalytics/index.php` in your browser!
 
@@ -44,6 +54,8 @@ Thanks to [WhiteHat](http://stackoverflow.com/users/5090771/whitehat) for his he
 ## Other versions
 
 Here is [PHP-only version](https://github.com/benyafai/TinyAnalytics) contributed by @benyafai.
+
+The [Grav plugin version](https://github.com/xtruan/TinyAnalytics) was contributed by @xtruan.
 
 ## License
 
