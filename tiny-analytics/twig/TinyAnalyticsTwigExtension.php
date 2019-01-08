@@ -12,8 +12,8 @@ class TinyAnalyticsTwigExtension extends \Twig_Extension
             new \Twig_SimpleFunction('ta_record_visit', [$this, 'recordVisitFunction'])
         ];
     }
-    public function recordVisitFunction()
+    public function recordVisitFunction($page)
     {
-        return 'something';
+        return 'page: ' + $page;
     }
 }
